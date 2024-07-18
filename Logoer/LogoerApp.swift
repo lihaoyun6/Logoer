@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Sparkle
+import CoreGraphics
 
 let ud = UserDefaults.standard
 var updaterController: SPUStandardUpdaterController!
@@ -31,6 +32,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         createLogo()
+        CGDisplayRegisterReconfigurationCallback(displayReconfigurationCallback, nil)
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
+        CGDisplayRemoveReconfigurationCallback(displayReconfigurationCallback, nil)
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
@@ -47,6 +53,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return true
     }
+}
+
+func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplayChangeSummaryFlags, userInfo: UnsafeMutableRawPointer?) {
+    if flags.contains(.addFlag) { createLogo() }
 }
 
 func createLogo() {
