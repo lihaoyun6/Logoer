@@ -40,11 +40,18 @@ struct SettingsView: View {
             }
             Divider()
             UpdaterSettingsView(updater: updaterController.updater)
-            Button(action: {
-                updaterController.updater.checkForUpdates()
-            }, label: {
-                Text("Check for Updates…")
-            })
+            HStack(spacing: 20) {
+                Button(action: {
+                    updaterController.updater.checkForUpdates()
+                }, label: {
+                    Text("Check for Updates…")
+                })
+                Button(action: {
+                    NSApp.terminate(self)
+                }, label: {
+                    Text("Quit Logoer")
+                })
+            }
         }
         .fixedSize()
         .padding()

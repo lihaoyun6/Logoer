@@ -43,7 +43,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            print(NSApp.windows.map({$0.title}))
             NSApp.windows.first(where: { $0.title != "logo" })?.level = .floating
         }
         return true
@@ -54,14 +53,16 @@ func createLogo() {
     @AppStorage("pinOnNotch") var pinOnNotch = true
     for w in NSApp.windows.filter({ $0.title == "logo" }) { w.close() }
     for screen in NSScreen.screens {
-        let logo = NSPanel(contentRect: NSRect(x:0, y: 0, width: 20, height: 20), styleMask: [.fullSizeContentView, .nonactivatingPanel], backing: .buffered, defer: false)
+        let logo = NSWindow(contentRect: NSRect(x:0, y: 0, width: 20, height: 20), styleMask: [.fullSizeContentView], backing: .buffered, defer: false)
         logo.contentView = NSHostingView(rootView: ContentView())
         logo.title = "logo".local
         logo.isOpaque = false
         logo.hasShadow = false
+        logo.isRestorable = false
+        logo.ignoresMouseEvents = true
+        logo.isReleasedWhenClosed = false
         logo.level = .statusBar
         logo.backgroundColor = .clear
-        logo.ignoresMouseEvents = true
         logo.collectionBehavior = [.stationary]
         if screen.hasTopNotchDesign {
             if pinOnNotch { logo.collectionBehavior = [.canJoinAllSpaces, .stationary] }
