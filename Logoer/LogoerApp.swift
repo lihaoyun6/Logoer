@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplayChangeSummaryFlags, userInfo: UnsafeMutableRawPointer?) {
-    if flags.contains(.addFlag) { createLogo() }
+    if flags.contains(.addFlag) || flags.contains(.removeFlag) { createLogo() }
 }
 
 func createLogo() {
