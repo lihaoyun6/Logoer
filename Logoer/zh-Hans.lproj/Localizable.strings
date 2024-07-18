@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Logoer
+
+  Created by apple on 2024/7/19.
+  
+*/
+
+"Launch at Login" = "登录时启动";
+"Pin to Notch Screen" = "在刘海屏上固定显示";
+"Logo Style" = "图标风格";
+"Rainbow Logo" = "经典彩虹";
+"Custom Color" = "自选颜色";
+"Check for Updates…" = "检查程序更新…";
+"Automatically check for updates" = "自动检查程序更新";
+"Automatically download updates" = "自动下载程序更新";
