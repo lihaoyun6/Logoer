@@ -3,6 +3,21 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.1</title>
+            <pubDate>Fri, 19 Jul 2024 04:06:03 +0800</pubDate>
+            <sparkle:version>011</sparkle:version>
+            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 5;padding-left: 18;}</style><ul>
+                  <li>修复了 macOS 11/12 无法显示 logo 的问题</li>
+                  </ul><ul>
+                  <li>Fixed compatibility for macOS 11/12</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.1/Logoer_v0.1.1.dmg" length="978890" type="application/octet-stream" sparkle:edSignature="xR/Eg3hY77CAFsJ+k+slHHWmuy0cqyzwvMsWuCo8F0DfMBDSJVEdZqSo+CpxdSCy7Whm3+dsnY05Io6hTicgAQ=="/>
+        </item>
+        <item>
             <title>v0.1.0</title>
             <pubDate>Fri, 19 Jul 2024 03:08:17 +0800</pubDate>
             <sparkle:version>010</sparkle:version>
