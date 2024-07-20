@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
 	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/lihaoyun6/Logoer/main/appcast.xml</string>
+	<string>http://localhost:8000/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>dP6zY7RAyK3DtV/dDrQ2V2dB0BY36jADwMKHZIX89u4=</string>
 </dict>
