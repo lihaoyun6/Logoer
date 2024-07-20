@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Apple_chrome_logo_darker.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

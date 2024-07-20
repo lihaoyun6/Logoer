@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Apple_aqua_logo_darker.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

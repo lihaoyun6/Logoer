@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Apple_glass_logo.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

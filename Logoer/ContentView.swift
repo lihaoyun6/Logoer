@@ -9,42 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("userColor") var userColor: Color = .green
+    @AppStorage("userEmoji") var userEmoji = "🍎"
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @State private var ibattery = getPowerState()
     @State private var innercColor = getPowerColor(getPowerState().batteryLevel)
     
     var body: some View {
-        if logoStyle == "rainbow" {
-            ZStack {
-                if #available(macOS 14, *) {
-                    Image("Rainbow")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 16, height: 17)
-                        .mask (
-                            ZStack {
-                                Image(systemName: "apple.logo")
-                                    .font(.system(size: 17, weight: .black))
-                                Image(systemName: "apple.logo")
-                                    .font(.system(size: 17, weight: .black))
-                                    .offset(y: -0.05)
-                            }
-                        )
-                } else {
-                    Image("Rainbow")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 16, height: 17)
-                        .mask (
-                            Image("Apple")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 17)
-                        )
-                        .offset(x: -0.5, y: -0.1)
-                }
-            }
-        } else if logoStyle == "color" {
+        if logoStyle == "color" {
             if #available(macOS 14, *) {
                 ZStack {
                     Image(systemName: "apple.logo")
@@ -82,14 +53,15 @@ struct ContentView: View {
                     .mask (
                         VStack {
                             Spacer()
-                            Rectangle().frame(height: max(2, CGFloat(ibattery.batteryLevel) / 100 * 14))
+                            Rectangle()
+                                .frame(height: ibattery.batteryLevel >= 20 ? max(4, CGFloat(ibattery.batteryLevel) / 100 * 14) : 14)
                         }
                     )
                     .onReceive(batteryTimer) {_ in
                         ibattery = getPowerState()
                         innercColor = getPowerColor(ibattery.batteryLevel)
                     }
-                if !ibattery.acPowered {
+                if ibattery.acPowered {
                     Image(systemName: "bolt.fill")
                         .font(.system(size: 7.5, weight: .black))
                         .frame(width: 16, height: 17)
@@ -98,6 +70,48 @@ struct ContentView: View {
                         .shadow(color: .black, radius: 1)
                 }
             }
+        } else if logoStyle == "rainbow" {
+            ZStack {
+                if #available(macOS 14, *) {
+                    Image("rainbow")
+                        .interpolation(.high)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16, height: 17)
+                        .mask (
+                            ZStack {
+                                Image(systemName: "apple.logo")
+                                    .font(.system(size: 17, weight: .black))
+                                Image(systemName: "apple.logo")
+                                    .font(.system(size: 17, weight: .black))
+                                    .offset(y: -0.05)
+                            }
+                        )
+                } else {
+                    Image("rainbow")
+                        .interpolation(.high)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16, height: 17)
+                        .mask (
+                            Image("Apple")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 17)
+                        )
+                        .offset(x: -0.5, y: -0.1)
+                }
+            }
+        } else if logoStyle == "emoji" {
+            Text(userEmoji)
+                .font(.system(size: 15.5, weight: .black))
+                .offset(y: 0.2)
+        } else {
+            Image(logoStyle)
+                .interpolation(.high)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 16, height: 17)
         }
     }
 }

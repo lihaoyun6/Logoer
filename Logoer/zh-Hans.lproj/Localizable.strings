@@ -10,8 +10,13 @@
 "Pin to Notch Screen" = "在刘海屏上固定显示";
 "Logo Style" = "图标风格";
 "Rainbow Apple" = "经典彩虹";
-"Battery Apple" = "电池指示";
-"Custom Color" = "自选颜色";
+"Chrome Apple" = "镀铬金属";
+"Glass Apple" = "银色玻璃";
+"Aqua Apple" = "蓝色玻璃";
+"Rainbow Apple" = "经典彩虹";
+"Battery Indicator" = "电量指示器";
+"Custom Color" = "自定义颜色";
+"Custom Emoji" = "自定义 Emoji";
 "Quit Logoer" = "退出 Logoer";
 "Check for Updates…" = "检查程序更新…";
 "Automatically check for updates" = "自动检查程序更新";

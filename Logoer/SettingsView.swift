@@ -14,6 +14,7 @@ struct SettingsView: View {
     @AppStorage("launchAtLogin") var launchAtLogin = false
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @AppStorage("userColor") var userColor: Color = .green
+    @AppStorage("userEmoji") var userEmoji = "🍎"
     
     var body: some View {
         VStack {
@@ -32,13 +33,28 @@ struct SettingsView: View {
             HStack {
                 Picker("Logo Style", selection: $logoStyle) {
                     Text("Rainbow Apple").tag("rainbow")
-                    Text("Battery Apple").tag("battery")
+                    Text("Chrome Apple").tag("chrome")
+                    Text("Glass Apple").tag("glass")
+                    Text("Aqua Apple").tag("aqua")
+                    Text("Battery Indicator").tag("battery")
                     Text("Custom Color").tag("color")
-                }.pickerStyle(.segmented)
-                ColorPicker("", selection: $userColor)
-                    .disabled(logoStyle != "color")
-                    .opacity(logoStyle != "color" ? 0.5 : 1.0)
-            }
+                    Text("Custom Emoji").tag("emoji")
+                }
+                .onChange(of: logoStyle) { _ in createLogo() }
+                if logoStyle == "color" {
+                    ColorPicker("", selection: $userColor)
+                } else if logoStyle == "emoji" {
+                    Spacer().frame(width: 15)
+                    TextField("", text: $userEmoji)
+                        .frame(width: 45)
+                        .onChange(of: userEmoji) { newValue in
+                            if newValue.count > 1 { userEmoji = String(newValue.first ?? "🍎") }
+                            createLogo()
+                        }
+                } else {
+                    Spacer()
+                }
+            }.frame(height: 20)
             Divider()
             UpdaterSettingsView(updater: updaterController.updater)
             Spacer().frame(height: 10)

@@ -70,6 +70,8 @@ func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplay
 
 func createLogo() {
     @AppStorage("pinOnNotch") var pinOnNotch = true
+    @AppStorage("logoStyle") var logoStyle = "rainbow"
+    
     for w in NSApp.windows.filter({ $0.title == "logo" }) { w.close() }
     for screen in NSScreen.screens {
         let appleMenuBarHeight = screen.frame.height - screen.visibleFrame.height - (screen.visibleFrame.origin.y - screen.frame.origin.y) - 1
@@ -77,7 +79,6 @@ func createLogo() {
         logo.contentView = NSHostingView(rootView: ContentView())
         logo.title = "logo".local
         logo.isOpaque = false
-        logo.hasShadow = false
         logo.isRestorable = false
         logo.ignoresMouseEvents = true
         logo.isReleasedWhenClosed = false
@@ -85,7 +86,12 @@ func createLogo() {
         logo.backgroundColor = .clear
         logo.collectionBehavior = [.transient]
         if screen.hasTopNotchDesign && pinOnNotch { logo.collectionBehavior = [.canJoinAllSpaces, .transient] }
-        logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5))
+        if logoStyle == "emoji" {
+            logo.setFrameOrigin(NSPoint(x: 17  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5 - 2))
+        } else {
+            logo.hasShadow = false
+            logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5))
+        }
         logo.orderFront(nil)
     }
 }
