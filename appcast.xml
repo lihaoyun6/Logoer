@@ -3,6 +3,26 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.4</title>
+            <pubDate>Sun, 21 Jul 2024 01:11:13 +0800</pubDate>
+            <sparkle:version>014</sparkle:version>
+            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了充电指示器状态显示错误的问题</li>
+                  <li>添加了全屏模式支持</li>
+                  </ul><ul>
+                  <li>Fixed incorrect charger icon</li>
+                  <li>Added fullscreen mode support</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="280"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.4/Logoer_v0.1.4.dmg" length="1180870" type="application/octet-stream" sparkle:edSignature="Dwvr7KC6uToQA/oO3DVxTMrI/KCwUfPr8Av1V88ON9snkPDoKNpwJL/soCzfi988u3534RKA8mFijsCJhr7ZDQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.4/Update014-013.delta" sparkle:deltaFrom="013" length="84282" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="QoAQd+3pptMGWa5BsgrvWqSN7hW4QWmAMCkrxWLm/9uYE/NXlEDzEqa3Vgi7dG1CrQCCFbaML8LVfOSuwUvDDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.0</title>
             <pubDate>Fri, 19 Jul 2024 03:08:17 +0800</pubDate>
             <sparkle:version>010</sparkle:version>
