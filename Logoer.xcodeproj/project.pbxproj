@@ -19,6 +19,7 @@
 		182AC4E42C49953300CF1790 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182AC4E22C49953300CF1790 /* Localizable.strings */; };
 		182AC4E82C499CA900CF1790 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 182AC4E72C499CA900CF1790 /* Sparkle */; };
 		182AC4EB2C499D5100CF1790 /* Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AC4EA2C499D5100CF1790 /* Sparkle.swift */; };
+		18FF01392C4A89F70020A3EC /* InternalBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF01382C4A89F70020A3EC /* InternalBattery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		182AC4E52C49954700CF1790 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		182AC4E92C499CC400CF1790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		182AC4EA2C499D5100CF1790 /* Sparkle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sparkle.swift; sourceTree = "<group>"; };
+		18FF01382C4A89F70020A3EC /* InternalBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalBattery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				182AC4BC2C49611000CF1790 /* LogoerApp.swift */,
 				182AC4BE2C49611000CF1790 /* ContentView.swift */,
 				182AC4CB2C497F6F00CF1790 /* SettingsView.swift */,
+				18FF01382C4A89F70020A3EC /* InternalBattery.swift */,
 				182AC4EA2C499D5100CF1790 /* Sparkle.swift */,
 				182AC4C02C49611100CF1790 /* Assets.xcassets */,
 				182AC4E22C49953300CF1790 /* Localizable.strings */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182AC4CC2C497F6F00CF1790 /* SettingsView.swift in Sources */,
+				18FF01392C4A89F70020A3EC /* InternalBattery.swift in Sources */,
 				182AC4BF2C49611000CF1790 /* ContentView.swift in Sources */,
 				182AC4EB2C499D5100CF1790 /* Sparkle.swift in Sources */,
 				182AC4BD2C49611000CF1790 /* LogoerApp.swift in Sources */,
@@ -388,7 +392,7 @@
 				CODE_SIGN_ENTITLEMENTS = Logoer/Logoer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 011;
+				CURRENT_PROJECT_VERSION = 012;
 				DEVELOPMENT_ASSET_PATHS = "\"Logoer/Preview Content\"";
 				DEVELOPMENT_TEAM = L4T783637F;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -402,7 +406,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lihaoyun6.Logoer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -418,7 +422,7 @@
 				CODE_SIGN_ENTITLEMENTS = Logoer/Logoer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 011;
+				CURRENT_PROJECT_VERSION = 012;
 				DEVELOPMENT_ASSET_PATHS = "\"Logoer/Preview Content\"";
 				DEVELOPMENT_TEAM = L4T783637F;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -432,7 +436,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lihaoyun6.Logoer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -448,7 +452,7 @@
 				CODE_SIGN_ENTITLEMENTS = LogoerHelper/LogoerHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 011;
+				CURRENT_PROJECT_VERSION = 012;
 				DEVELOPMENT_TEAM = L4T783637F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,7 +465,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lihaoyun6.LogoerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -478,7 +482,7 @@
 				CODE_SIGN_ENTITLEMENTS = LogoerHelper/LogoerHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 011;
+				CURRENT_PROJECT_VERSION = 012;
 				DEVELOPMENT_TEAM = L4T783637F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -491,7 +495,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lihaoyun6.LogoerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -51,11 +51,12 @@ struct UpdaterSettingsView: View {
     }
     
     var body: some View {
-        VStack {
+        HStack {
             Toggle("Automatically check for updates", isOn: $automaticallyChecksForUpdates)
                 .onChange(of: automaticallyChecksForUpdates) { newValue in
                     updater.automaticallyChecksForUpdates = newValue
                 }
+            Spacer()
             Toggle("Automatically download updates", isOn: $automaticallyDownloadsUpdates)
                 .disabled(!automaticallyChecksForUpdates)
                 .onChange(of: automaticallyDownloadsUpdates) { newValue in

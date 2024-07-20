@@ -9,9 +9,14 @@
 "Launch at Login" = "登录时启动";
 "Pin to Notch Screen" = "在刘海屏上固定显示";
 "Logo Style" = "图标风格";
-"Rainbow Logo" = "经典彩虹";
+"Rainbow Apple" = "经典彩虹";
+"Battery Apple" = "电池指示";
 "Custom Color" = "自选颜色";
 "Quit Logoer" = "退出 Logoer";
 "Check for Updates…" = "检查程序更新…";
 "Automatically check for updates" = "自动检查程序更新";
 "Automatically download updates" = "自动下载程序更新";
+"OK" = "好";
+"Logoer Tips" = "使用小贴士";
+"Don't remind me again" = "不再提醒";
+"When Logoer is running, you can run it again to bring up the settings panel." = "当 Logger 正在运行的时候\n再次从访达中运行它就可以唤起设置面板";

@@ -31,7 +31,8 @@ struct SettingsView: View {
             Divider()
             HStack {
                 Picker("Logo Style", selection: $logoStyle) {
-                    Text("Rainbow Logo").tag("rainbow")
+                    Text("Rainbow Apple").tag("rainbow")
+                    Text("Battery Apple").tag("battery")
                     Text("Custom Color").tag("color")
                 }.pickerStyle(.segmented)
                 ColorPicker("", selection: $userColor)
@@ -40,12 +41,18 @@ struct SettingsView: View {
             }
             Divider()
             UpdaterSettingsView(updater: updaterController.updater)
-            HStack(spacing: 20) {
+            Spacer().frame(height: 10)
+            HStack {
+                if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                    Text("Logoer v\(version)").foregroundColor(.secondary.opacity(0.5))
+                    Spacer()
+                }
                 Button(action: {
                     updaterController.updater.checkForUpdates()
                 }, label: {
                     Text("Check for Updates…")
                 })
+                Spacer()
                 Button(action: {
                     NSApp.terminate(self)
                 }, label: {
