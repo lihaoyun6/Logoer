@@ -3,6 +3,26 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.2</title>
+            <pubDate>Sat, 20 Jul 2024 09:32:20 +0800</pubDate>
+            <sparkle:version>012</sparkle:version>
+            <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 5;padding-left: 18;}</style><ul>
+                  <li>修复了刘海屏使用非默认分辨率时 logo 错位的问题</li>
+                  <li>添加了 "电池指示器" 模式</li>
+                  </ul><ul>
+                  <li>Fixed: Alignment failure when using some resolution on notch screen</li>
+                  <li>Added "Battery indicator" mode</li>
+                  </ul><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="280"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.2/Logoer_v0.1.2.dmg" length="1116735" type="application/octet-stream" sparkle:edSignature="QDLbzjWnHug8utX0WF4nZ+GZliHq3dMgX4SWXyxVvzxo9SYCxP/rjA1BRlXDd/EgDSkMBLr3NKabT1xCIAxDDw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.2/Update012-011.delta" sparkle:deltaFrom="011" length="75490" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="pFwshdrOOSK+DdSyjzLtucmhxAoGPbv9ol1agQB96Bp7eVrSSglrJaVElXy1zuk3CG6AnvvZpzRJVrUc+vXMAQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.1</title>
             <pubDate>Fri, 19 Jul 2024 04:06:03 +0800</pubDate>
             <sparkle:version>011</sparkle:version>
