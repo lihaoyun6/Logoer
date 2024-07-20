@@ -10,7 +10,7 @@ import Foundation
 import ServiceManagement
 
 struct SettingsView: View {
-    @AppStorage("pinOnNotch") var pinOnNotch = true
+    @AppStorage("pinOnScreen") var pinOnScreen = false
     @AppStorage("launchAtLogin") var launchAtLogin = false
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @AppStorage("userColor") var userColor: Color = .green
@@ -25,9 +25,9 @@ struct SettingsView: View {
                         SMLoginItemSetEnabled("com.lihaoyun6.LogoerHelper" as CFString, newValue)
                     }
                 Spacer()
-                Toggle("Pin to Notch Screen", isOn: $pinOnNotch)
+                Toggle("Visible in Full Screen Mode", isOn: $pinOnScreen)
                     .toggleStyle(.switch)
-                    .onChange(of: pinOnNotch) { newValue in createLogo() }
+                    .onChange(of: pinOnScreen) { newValue in createLogo() }
             }
             Divider()
             HStack {

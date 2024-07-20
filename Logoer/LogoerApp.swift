@@ -10,6 +10,7 @@ import Sparkle
 import CoreGraphics
 
 let ud = UserDefaults.standard
+var aboveSonoma = false
 var updaterController: SPUStandardUpdaterController!
 
 @main
@@ -31,16 +32,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        if #available(macOS 14, *) { aboveSonoma = true }
         createLogo()
         CGDisplayRegisterReconfigurationCallback(displayReconfigurationCallback, nil)
-        let tipID = "logoer.first-start.note"
-        let never = UserDefaults.standard.object(forKey: "neverRemindMe") as? [String] ?? []
-        if !never.contains(tipID) {
-            let alert = createAlert(title: "Logoer Tips".local, message: "When Logoer is running, you can run it again to bring up the settings panel.".local, button1: "Don't remind me again", button2: "OK")
-            if alert.runModal() == .alertFirstButtonReturn {
-                UserDefaults.standard.setValue(never + [tipID], forKey: "neverRemindMe")
-            }
-        }
+        tips(id: "logoer.first-start.note", text: "When Logoer is running, you can run it again to bring up the settings panel.")
+        tips(id: "logoer.full-screen.note", text: "Enabling \"Visible in Full Screen Mode\" will keep the logo visible in full screen mode.")
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -69,7 +65,7 @@ func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplay
 }
 
 func createLogo() {
-    @AppStorage("pinOnNotch") var pinOnNotch = true
+    @AppStorage("pinOnScreen") var pinOnScreen = false
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     
     for w in NSApp.windows.filter({ $0.title == "logo" }) { w.close() }
@@ -85,7 +81,7 @@ func createLogo() {
         logo.level = .statusBar
         logo.backgroundColor = .clear
         logo.collectionBehavior = [.transient]
-        if screen.hasTopNotchDesign && pinOnNotch { logo.collectionBehavior = [.canJoinAllSpaces, .transient] }
+        if pinOnScreen { logo.collectionBehavior = [.canJoinAllSpaces, .transient] }
         if logoStyle == "emoji" {
             logo.setFrameOrigin(NSPoint(x: 17  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5 - 2))
         } else {
@@ -93,6 +89,14 @@ func createLogo() {
             logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5))
         }
         logo.orderFront(nil)
+    }
+}
+
+func tips(id: String, text: String) {
+    let never = UserDefaults.standard.object(forKey: "neverRemindMe") as? [String] ?? []
+    if !never.contains(id) {
+        let alert = createAlert(title: "Logoer Tips".local, message: text.local, button1: "Don't remind me again", button2: "OK")
+        if alert.runModal() == .alertFirstButtonReturn { UserDefaults.standard.setValue(never + [id], forKey: "neverRemindMe") }
     }
 }
 

@@ -45,7 +45,7 @@ struct ContentView: View {
             }
         } else if logoStyle == "battery" {
             ZStack {
-                Image("Apple_Inner")
+                Image("Apple_Inner" + (aboveSonoma ? "" : "_old"))
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(Color(innercColor))
@@ -66,10 +66,10 @@ struct ContentView: View {
                         .font(.system(size: 7.5, weight: .black))
                         .frame(width: 16, height: 17)
                         .foregroundColor(.white)
-                        .offset(y: 2)
+                        .offset(y: aboveSonoma ? 2 : 1.8)
                         .shadow(color: .black, radius: 1)
                 }
-            }
+            }.needOffset()
         } else if logoStyle == "rainbow" {
             ZStack {
                 if #available(macOS 14, *) {
@@ -107,11 +107,22 @@ struct ContentView: View {
                 .font(.system(size: 15.5, weight: .black))
                 .offset(y: 0.2)
         } else {
-            Image(logoStyle)
+            Image(logoStyle + (aboveSonoma ? "" : "_old"))
                 .interpolation(.high)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 16, height: 17)
+                .needOffset()
+        }
+    }
+}
+
+extension View {
+    func needOffset() -> some View {
+        if #available(macOS 14, *) {
+            return self
+        } else {
+            return self.offset(x: -0.5, y: -0.5)
         }
     }
 }
