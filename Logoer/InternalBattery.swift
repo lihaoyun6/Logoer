@@ -31,6 +31,7 @@ func getPowerColor(_ level: Int) -> String {
 }
 
 func getPowerState() -> iBattery {
+    if !deviceType.lowercased().contains("book") { return iBattery(hasBattery: false, isCharging: false, isCharged: false, acPowered: false, timeLeft: "", batteryLevel: 0) }
     let internalFinder = InternalFinder()
     if let internalBattery = internalFinder.getInternalBattery() {
         if let level = internalBattery.charge {

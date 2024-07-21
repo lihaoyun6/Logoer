@@ -11,8 +11,9 @@ struct ContentView: View {
     @AppStorage("userColor") var userColor: Color = .green
     @AppStorage("userEmoji") var userEmoji = "🍎"
     @AppStorage("logoStyle") var logoStyle = "rainbow"
-    @State private var ibattery = getPowerState()
-    @State private var innercColor = getPowerColor(getPowerState().batteryLevel)
+    @AppStorage("userImage") var userImage: URL = URL(fileURLWithPath: "/")
+    @State private var ibattery = InternalBattery.status
+    @State private var innercColor = getPowerColor(InternalBattery.status.batteryLevel)
     
     var body: some View {
         if logoStyle == "color" {
@@ -58,7 +59,8 @@ struct ContentView: View {
                         }
                     )
                     .onReceive(batteryTimer) {_ in
-                        ibattery = getPowerState()
+                        InternalBattery.status = getPowerState()
+                        ibattery = InternalBattery.status
                         innercColor = getPowerColor(ibattery.batteryLevel)
                     }
                 if ibattery.acPowered {
@@ -106,6 +108,17 @@ struct ContentView: View {
             Text(userEmoji)
                 .font(.system(size: 15.5, weight: .black))
                 .offset(y: 0.2)
+        } else if logoStyle == "custom" {
+            if userImage != URL(fileURLWithPath: "/") {
+                if let i = NSImage(contentsOf: userImage) {
+                    Image(nsImage: i)
+                        .interpolation(.high)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16, height: 17)
+                        .needOffset()
+                }
+            }
         } else {
             Image(logoStyle + (aboveSonoma ? "" : "_old"))
                 .interpolation(.high)

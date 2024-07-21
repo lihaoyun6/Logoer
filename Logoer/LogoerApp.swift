@@ -10,6 +10,7 @@ import Sparkle
 import CoreGraphics
 
 let ud = UserDefaults.standard
+var deviceType = "Mac"
 var aboveSonoma = false
 var updaterController: SPUStandardUpdaterController!
 
@@ -32,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        deviceType = getMacDeviceType()
         if #available(macOS 14, *) { aboveSonoma = true }
         createLogo()
         CGDisplayRegisterReconfigurationCallback(displayReconfigurationCallback, nil)
@@ -75,6 +77,7 @@ func createLogo() {
         logo.contentView = NSHostingView(rootView: ContentView())
         logo.title = "logo".local
         logo.isOpaque = false
+        logo.hasShadow = false
         logo.isRestorable = false
         logo.ignoresMouseEvents = true
         logo.isReleasedWhenClosed = false
@@ -85,7 +88,6 @@ func createLogo() {
         if logoStyle == "emoji" {
             logo.setFrameOrigin(NSPoint(x: 17  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5 - 2))
         } else {
-            logo.hasShadow = false
             logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5))
         }
         logo.orderFront(nil)
@@ -108,6 +110,48 @@ func createAlert(level: NSAlert.Style = .warning, title: String, message: String
     if button2 != "" { alert.addButton(withTitle: button2.local) }
     alert.alertStyle = level
     return alert
+}
+
+func getMacDeviceType() -> String {
+    guard let result = process(path: "/usr/sbin/system_profiler", arguments: ["SPHardwareDataType", "-json"]) else { return "Mac" }
+    if let json = try? JSONSerialization.jsonObject(with: Data(result.utf8), options: []) as? [String: Any],
+       let SPHardwareDataTypeRaw = json["SPHardwareDataType"] as? [Any],
+       let SPHardwareDataType = SPHardwareDataTypeRaw[0] as? [String: Any],
+       let model = SPHardwareDataType["machine_name"] as? String{
+        return model
+    }
+    return "Mac"
+}
+
+public func process(path: String, arguments: [String], timeout: Double = 0) -> String? {
+    let task = Process()
+    task.launchPath = path
+    task.arguments = arguments
+    task.standardError = Pipe()
+    
+    let outputPipe = Pipe()
+    defer { outputPipe.fileHandleForReading.closeFile() }
+    task.standardOutput = outputPipe
+    
+    if timeout != 0 {
+        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(timeout)) {
+            if task.isRunning { task.terminate() }
+        }
+    }
+    
+    do {
+        try task.run()
+    } catch let error {
+        print("\(error.localizedDescription)")
+        return nil
+    }
+    
+    let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+    let output = String(decoding: outputData, as: UTF8.self)
+    
+    if output.isEmpty { return nil }
+    
+    return output.trimmingCharacters(in: .newlines)
 }
 
 extension String {

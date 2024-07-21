@@ -15,6 +15,8 @@ struct SettingsView: View {
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @AppStorage("userColor") var userColor: Color = .green
     @AppStorage("userEmoji") var userEmoji = "🍎"
+    @AppStorage("userImage") var userImage: URL = URL(fileURLWithPath: "/")
+    @State private var importing = false
     
     var body: some View {
         VStack {
@@ -39,6 +41,7 @@ struct SettingsView: View {
                     Text("Battery Indicator").tag("battery")
                     Text("Custom Color").tag("color")
                     Text("Custom Emoji").tag("emoji")
+                    Text("Custom Image").tag("custom")
                 }
                 .onChange(of: logoStyle) { _ in createLogo() }
                 if logoStyle == "color" {
@@ -50,6 +53,31 @@ struct SettingsView: View {
                         .onChange(of: userEmoji) { newValue in
                             if newValue.count > 1 { userEmoji = String(newValue.first ?? "🍎") }
                             createLogo()
+                        }
+                } else if logoStyle == "custom" {
+                    Button("Import…") { importing = true }
+                        .fileImporter(isPresented: $importing, allowedContentTypes: [.image]) { result in
+                            switch result {
+                            case .success(let file):
+                                let url = file.absoluteURL
+                                _ = url.startAccessingSecurityScopedResource()
+                                let fileManager = FileManager.default
+                                let sandboxURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+                                let destinationURL = sandboxURL.appendingPathComponent("user.\(url.pathExtension)")
+                                do {
+                                    if fileManager.fileExists(atPath: destinationURL.path) {
+                                        try fileManager.removeItem(at: destinationURL)
+                                    }
+                                    try fileManager.copyItem(at: url, to: destinationURL)
+                                    userImage = destinationURL
+                                    createLogo()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                                url.stopAccessingSecurityScopedResource()
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                            }
                         }
                 } else {
                     Spacer()
