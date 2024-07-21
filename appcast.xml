@@ -3,6 +3,27 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.5</title>
+            <pubDate>Sun, 21 Jul 2024 23:33:17 +0800</pubDate>
+            <sparkle:version>015</sparkle:version>
+            <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了在不含内置电池的 Mac 上闪退的问题</li>
+                  <li>添加了"自定义图像"模式, 允许用户导入任意图标</li>
+                  </ul><ul>
+                  <li>Fixed: Crash on Macs without internal battery</li>
+                  <li>Added "Custom Image" mode, allowing users to import icons</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="280"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.5/Logoer_v0.1.5.dmg" length="1215295" type="application/octet-stream" sparkle:edSignature="X1mB2BfqJxmwHFX6OyySSRrcvZRNDXDAW4ENkteSNn6UQZX1WFnZT4nHPgQmZbr0tPxy0uYQtlibGdwXlJF9Ag=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.5/Logoer015-014.delta" sparkle:deltaFrom="014" length="80098" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="9XySZOXriMyLzJHVBhuaNqA2Ugar2OhckEIMoj4nYoslnrjYyrgBZ5EPlLzLSWzt/Po3hd5xeDC/TevJXW8QDA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.5/Logoer015-013.delta" sparkle:deltaFrom="013" length="127414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Y4Jo6J0kmvJFTwSi/d0sQROuUpJqQNjmRcmrTX0TSZjmkNTumKKi4jD8tNG11hKXyAlWz3iUCjmIudAhaLI+AQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.4</title>
             <pubDate>Sun, 21 Jul 2024 01:11:13 +0800</pubDate>
             <sparkle:version>014</sparkle:version>
