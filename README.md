@@ -8,6 +8,7 @@
 ## Screenshots
 <p align="center">
 <img alt="Logoer Screenshots" src="./img/preview.png" width="410"/>
+<br>
 <img alt="Logoer Screenshots2" src="./img/preview2.png" width="410"/>
 </p>
 
