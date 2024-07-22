@@ -3,6 +3,26 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.6</title>
+            <pubDate>Mon, 22 Jul 2024 11:34:58 +0800</pubDate>
+            <sparkle:version>016</sparkle:version>
+            <sparkle:shortVersionString>0.1.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了与 macOS 15 的兼容性</li>
+                  </ul><ul>
+                  <li>Fixed compatibility with macOS 15</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Logoer_v0.1.6.dmg" length="1216089" type="application/octet-stream" sparkle:edSignature="35CtiF0mw67vDgAQ1duS0TCt55JRZY+zaArj6uKV8AJLcxyRibcUSEG7IRUvKTaP00AF8W6rDoFHF01FS9rbCw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Update016-015.delta" sparkle:deltaFrom="015" length="11646" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="LK/oSZYWpqVDuOsudWv8LH061Xtaw7a+h4aUs/HBJ375ig0QXV40pOZFctCg4DE7V6NpCy24B2TwidXg75HgAQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Update016-014.delta" sparkle:deltaFrom="014" length="80258" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="BqAlD/nRP7ylJ5DHtuoF4VjEzVmH/A0fjYEDTJ/J3Rj9JdjR0SgNlW6ADWJU0ENJ5GiF3qPjKYOIbxZwCqe1CA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Update016-013.delta" sparkle:deltaFrom="013" length="127862" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="29oYxNI5pYHwORfhljbDM634bkiAMlhgLcQ8u4mwik65u1FMZ5EiAWoloFpQVKhddyyWfijUUZNlnSKjASFVDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.5</title>
             <pubDate>Sun, 21 Jul 2024 23:33:17 +0800</pubDate>
             <sparkle:version>015</sparkle:version>
