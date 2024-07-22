@@ -7,7 +7,7 @@
 
 ## 运行截图
 <p align="center">
-<img alt="Logoer Screenshots" src="./img/preview.png" width="462"/>
+<img alt="Logoer Screenshots" src="./img/preview_zh.png" width="462"/>
 </p>
 
 ## 安装与使用
