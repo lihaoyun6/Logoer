@@ -70,7 +70,7 @@ struct SettingsView: View {
                                     }
                                     try fileManager.copyItem(at: url, to: destinationURL)
                                     userImage = destinationURL
-                                    createLogo()
+                                    createLogo(noCache: true)
                                 } catch {
                                     print(error.localizedDescription)
                                 }

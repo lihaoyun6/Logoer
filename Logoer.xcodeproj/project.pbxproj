@@ -19,6 +19,7 @@
 		182AC4E42C49953300CF1790 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182AC4E22C49953300CF1790 /* Localizable.strings */; };
 		182AC4E82C499CA900CF1790 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 182AC4E72C499CA900CF1790 /* Sparkle */; };
 		182AC4EB2C499D5100CF1790 /* Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AC4EA2C499D5100CF1790 /* Sparkle.swift */; };
+		18747AD72C4FF36C006FC3B5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 18747AD62C4FF36C006FC3B5 /* SDWebImageSwiftUI */; };
 		18FF01392C4A89F70020A3EC /* InternalBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF01382C4A89F70020A3EC /* InternalBattery.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18747AD72C4FF36C006FC3B5 /* SDWebImageSwiftUI in Frameworks */,
 				182AC4E82C499CA900CF1790 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +148,7 @@
 			name = Logoer;
 			packageProductDependencies = (
 				182AC4E72C499CA900CF1790 /* Sparkle */,
+				18747AD62C4FF36C006FC3B5 /* SDWebImageSwiftUI */,
 			);
 			productName = Logoer;
 			productReference = 182AC4B92C49611000CF1790 /* Logoer.app */;
@@ -198,6 +201,7 @@
 			mainGroup = 182AC4B02C49611000CF1790;
 			packageReferences = (
 				182AC4E62C499CA900CF1790 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				18747AD52C4FF36C006FC3B5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 182AC4BA2C49611000CF1790 /* Products */;
 			projectDirPath = "";
@@ -545,6 +549,14 @@
 				minimumVersion = 2.6.4;
 			};
 		};
+		18747AD52C4FF36C006FC3B5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -552,6 +564,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 182AC4E62C499CA900CF1790 /* XCRemoteSwiftPackageReference "Sparkle" */;
 			productName = Sparkle;
+		};
+		18747AD62C4FF36C006FC3B5 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18747AD52C4FF36C006FC3B5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

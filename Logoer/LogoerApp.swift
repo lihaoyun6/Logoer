@@ -8,6 +8,7 @@
 import SwiftUI
 import Sparkle
 import CoreGraphics
+import SDWebImageSwiftUI
 
 let ud = UserDefaults.standard
 var deviceType = "Mac"
@@ -66,11 +67,17 @@ func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplay
     createLogo()
 }
 
-func createLogo() {
+func createLogo(noCache: Bool = false) {
     @AppStorage("pinOnScreen") var pinOnScreen = false
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     
     for w in NSApp.windows.filter({ $0.title == "logo" }) { w.close() }
+    
+    if noCache {
+        SDImageCache.shared.clearMemory()
+        SDImageCache.shared.clearDisk()
+    }
+    
     for screen in NSScreen.screens {
         let appleMenuBarHeight = screen.frame.height - screen.visibleFrame.height - (screen.visibleFrame.origin.y - screen.frame.origin.y) - 1
         let logo = NSWindow(contentRect: NSRect(x:0, y: 0, width: 20, height: 20), styleMask: [.fullSizeContentView], backing: .buffered, defer: false)

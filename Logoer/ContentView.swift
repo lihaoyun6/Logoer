@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ContentView: View {
     @AppStorage("userColor") var userColor: Color = .green
@@ -110,13 +111,22 @@ struct ContentView: View {
                 .offset(y: 0.2)
         } else if logoStyle == "custom" {
             if userImage != URL(fileURLWithPath: "/") {
-                if let i = NSImage(contentsOf: userImage) {
-                    Image(nsImage: i)
+                if userImage.pathExtension == "gif" {
+                    WebImage(url: userImage)
                         .interpolation(.high)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 16, height: 17)
                         .needOffset()
+                } else {
+                    if let i = NSImage(contentsOf: userImage) {
+                        Image(nsImage: i)
+                            .interpolation(.high)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 17)
+                            .needOffset()
+                    }
                 }
             }
         } else {
