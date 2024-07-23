@@ -3,6 +3,28 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.7</title>
+            <pubDate>Tue, 23 Jul 2024 22:39:59 +0800</pubDate>
+            <sparkle:version>017</sparkle:version>
+            <sparkle:shortVersionString>0.1.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了在 macOS 15 上位置偏移的问题</li>
+                  <li>支持导入 Gif 图并动态播放</li>
+                  </ul><ul>
+                  <li>Fixed compatibility with macOS 15</li>
+                  <li>Added support for Gif animations</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Logoer_v0.1.7.dmg" length="1900217" type="application/octet-stream" sparkle:edSignature="pVkp70bKdDFlHIn9TsOSDqvmAbeLkpggBVQ4nvKIOFXA24dHjnk4bcb/eUMmwwBwFoWeTT3tic+Y+MR8X0s4AA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Update017-016.delta" sparkle:deltaFrom="016" length="592786" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="JKbeEnvC7DxqkXBALVUK/730qBgc80HDv3Y+9/O04+YxB/MqhHyfkWZYEVNONvy7uHo8hDHfMas6lpQQURPPAg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Update017-015.delta" sparkle:deltaFrom="015" length="592782" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="f7wQKMRmpJkrZEVYNCCCCqv9rJ/EJsbcRyUyHgo9i8KRbweGcVfufNGjmyGwMYmhS/wSi0Tc6HVGQtsrT79+BQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Update017-014.delta" sparkle:deltaFrom="014" length="621670" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="u/vayGTAP44WL0MtkR98i+0U6UvEvQ9CD21CimM1FIMLxlngO493N4RgMI4iIQehcSrT5TEfg6cR4fSk/2naAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.6</title>
             <pubDate>Mon, 22 Jul 2024 11:34:58 +0800</pubDate>
             <sparkle:version>016</sparkle:version>
