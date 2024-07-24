@@ -13,7 +13,7 @@
                   <li>添加了"当前 App 图标"模式, 可自动使用前台 App 图标替换默认 logo</li>
                   <li>修复了自定义图像无法完全覆盖默认 logo 的问题</li>
                   </ul><ul>
-                  <li>Added "Current App Icon" mode, which display the whole foreground app icon</li>
+                  <li>Added "Current App Icon" mode, which display the foreground app icon</li>
                   <li>Fixed: Custom images cannot cover the whole default logo</li>
                   </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
             ]]></description>
