@@ -14,10 +14,12 @@
 "Glass Apple" = "银色玻璃";
 "Aqua Apple" = "蓝色玻璃";
 "Rainbow Apple" = "经典彩虹";
-"Battery Indicator" = "电量指示器";
-"Custom Color" = "自定义颜色";
-"Custom Emoji" = "自定义 Emoji";
-"Custom Image" = "自定义图像";
+"*Battery Indicator" = "*电量指示器";
+"*Custom Color" = "*自定义颜色";
+"*Custom Emoji" = "*自定义 Emoji";
+"*Custom Image" = "*自定义图像";
+"*Frontmost App" = "*当前 App 图标";
+"Random" = "随机选取";
 "Import…" = "导入图片…";
 "Quit Logoer" = "退出 Logoer";
 "Check for Updates…" = "检查程序更新…";

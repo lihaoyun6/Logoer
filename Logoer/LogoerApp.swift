@@ -13,7 +13,10 @@ import SDWebImageSwiftUI
 let ud = UserDefaults.standard
 var deviceType = "Mac"
 var aboveSonoma = false
+var aboveSequoia = false
+var appIcon = NSWorkspace.shared.icon(forFile: Bundle.main.bundlePath)
 var updaterController: SPUStandardUpdaterController!
+let emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "🥲", "🥹", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🥸", "🤩", "🥳", "🙂‍↕️", "😏", "😒", "🙂‍↔️", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😮‍💨", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😱", "😨", "😰", "😥", "😓", "🫣", "🤗", "🤔", "🫢", "🤭", "🤫", "🤥", "😶", "😶‍🌫️", "😐", "😑", "😬", "🫨", "🫠", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", "😪", "😵", "😵‍💫", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "🤡", "👽", "🤖", "🎃", "👹", "🌞", "🌝", "🌚", "🌕", "🌖", "🌗", "🌘", "🌑", "🌒", "🌓", "🌔", "🌎", "🌍", "🌏", "🌼", "🌺", "🌸", "🐵", "🦧", "🪨", "🍏", "🍎", "🍑", "🫑", "🍞", "🍔", "🍟", "🍚", "🍘", "🍥", "🧁", "🍱", "🍩", "🍪", "🌰", "🥡", "⚽️", "🏀", "🏈", "⚾️", "🥎", "🎾", "🏐", "🎱", "🎲", "🏵", "🎹", "🎰", "🚌", "🚑", "🚛", "🚞", "🚨", "🚔", "🚍", "🚖", "🚆", "🗺", "🗾", "🎑", "🏞", "🌅", "🌄", "🌠", "🎇", "🎆", "🌇", "🌆", "🏙", "🌃", "🌌", "🌉", "🌁", "🏨", "🏪", "🏩", "🏛", "🏠", "🏚", "🏢", "🏬", "🏣", "🏤", "🏥", "🏦", "⌚️", "💻", "🖲", "💽", "💾", "💿", "📀", "🎛", "🧭", "📺", "📟", "☎️", "⏰", "🕰", "🩻", "🔮", "🧿", "🪙", "🛎", "🖼", "🎁", "📦", "🪩", "📜", "📄", "📑", "🧾", "📊", "📈", "📉", "🗒", "🗓", "📆", "📅", "🗄", "📋", "📰", "📓", "📔", "📒", "📕", "📗", "📘", "📙", "📚", "📝", "💟", "☮️", "✝️", "☪️", "🪯", "🕉", "☸️", "✡️", "🔯", "🕎", "☯️", "☦️", "🛐", "⛎", "♈️", "♉️", "♊️", "♋️", "♌️", "♍️", "♎️", "♏️", "♐️", "♑️", "♒️", "♓️", "🆔", "⚛️", "🉑", "☢️", "☣️", "📴", "📳", "🈶", "🈚️", "🈸", "🈺", "🈷️", "✴️", "🆚", "💮", "🉐", "㊙️", "㊗️", "🈴", "🈵", "🈹", "🈲", "🅰️", "🅱️", "🆎", "🆑", "🅾️", "🆘", "🛑", "⛔️", "🚷", "🚯", "🚳", "🚱", "🔞", "📵", "🚭", "✅", "🈯️", "💹", "❇️", "✳️", "❎", "🌐", "Ⓜ️", "🏧", "🚾", "♿️", "🅿️", "🛗", "🈳", "🈂️", "🛂", "🛃", "🛄", "🛅", "🚹", "🚺", "🚼", "🚻", "🚮", "🎦", "🛜", "📶", "🈁", "🔣", "ℹ️", "🔤", "🔡", "🔠", "🆖", "🆗", "🆙", "🆒", "🆕", "🆓", "0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟", "🔢", "#️⃣", "*️⃣", "⏏️", "▶️", "⏩", "⏪", "⏫", "⏬", "◀️", "🔼", "🔽", "➡️", "⬅️", "⬆️", "⬇️", "↗️", "↘️", "↙️", "↖️", "↕️", "↔️", "↪️", "↩️", "⤴️", "⤵️", "🔀", "🔁", "🔂", "🔄", "🔃", "☑️", "🔘", "🔴", "🟠", "🟡", "🟢", "🔵", "🟣", "⚫️", "⚪️", "🟤", "🔳", "🔲", "🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛️", "⬜️", "🟫", "🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛", "🕜", "🕝", "🕞", "🕟", "🕠", "🕡", "🕢", "🕣", "🕤", "🕥", "🕦", "🕧"]
 
 @main
 struct LogoerApp: App {
@@ -31,11 +34,13 @@ struct LogoerApp: App {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+    @AppStorage("logoStyle") var logoStyle = "rainbow"
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(didActivateApplication(_:)), name: NSWorkspace.didActivateApplicationNotification, object: nil)
         deviceType = getMacDeviceType()
         if #available(macOS 14, *) { aboveSonoma = true }
+        if #available(macOS 15, *) { aboveSequoia = true }
         createLogo()
         CGDisplayRegisterReconfigurationCallback(displayReconfigurationCallback, nil)
         tips(id: "logoer.first-start.note", text: "When Logoer is running, you can run it again to bring up the settings panel.")
@@ -44,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillTerminate(_ aNotification: Notification) {
         CGDisplayRemoveReconfigurationCallback(displayReconfigurationCallback, nil)
+        NSWorkspace.shared.notificationCenter.removeObserver(self, name: NSWorkspace.didActivateApplicationNotification, object: nil)
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
@@ -60,6 +66,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSApp.windows.first(where: { $0.title != "logo" })?.level = .floating
         }
         return true
+    }
+    
+    @objc func didActivateApplication(_ notification: Notification) {
+        if logoStyle == "appicon",
+           let userInfo = notification.userInfo,
+           let app = userInfo[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication {
+            if let path = app.bundleURL?.path {
+                appIcon = NSWorkspace.shared.icon(forFile: path)
+                createLogo()
+            }
+            //print("前台应用程序发生变化: \(app.localizedName ?? "未知应用")")
+        }
     }
 }
 
@@ -92,13 +110,12 @@ func createLogo(noCache: Bool = false) {
         logo.backgroundColor = .clear
         logo.collectionBehavior = [.transient]
         if pinOnScreen { logo.collectionBehavior = [.canJoinAllSpaces, .transient] }
+        logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5))
         if logoStyle == "emoji" {
-            logo.setFrameOrigin(NSPoint(x: 17  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5 - 2))
+            logo.setFrameOrigin(NSPoint(x: 17  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5 - (aboveSequoia ? 3 : 2)))
         } else {
-            if #available(macOS 15, *) {
-                logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - (screen.hasTopNotchDesign ? 10 : 11)))
-            } else {
-                logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - 7.5))
+            if aboveSequoia && logoStyle != "appicon" {
+                logo.setFrameOrigin(NSPoint(x: 19  + screen.frame.minX, y: screen.frame.minY + screen.frame.height - appleMenuBarHeight/2 - (screen.hasTopNotchDesign ? (logoStyle == "custom" ? 10.5 : 10) : 11)))
             }
         }
         logo.orderFront(nil)

@@ -38,18 +38,20 @@ struct SettingsView: View {
                     Text("Chrome Apple").tag("chrome")
                     Text("Glass Apple").tag("glass")
                     Text("Aqua Apple").tag("aqua")
-                    Text("Battery Indicator").tag("battery")
-                    Text("Custom Color").tag("color")
-                    Text("Custom Emoji").tag("emoji")
-                    Text("Custom Image").tag("custom")
+                    Text("*Frontmost App").tag("appicon")
+                    Text("*Battery Indicator").tag("battery")
+                    Text("*Custom Color").tag("color")
+                    Text("*Custom Emoji").tag("emoji")
+                    Text("*Custom Image").tag("custom")
                 }
                 .onChange(of: logoStyle) { _ in createLogo() }
                 if logoStyle == "color" {
                     ColorPicker("", selection: $userColor)
                 } else if logoStyle == "emoji" {
-                    Spacer().frame(width: 15)
+                    //Spacer().frame(width: 15)
+                    Button("Random") { if let emoji = emojis.shuffled().first { userEmoji = emoji } }
                     TextField("", text: $userEmoji)
-                        .frame(width: 45)
+                        .frame(width: 30)
                         .onChange(of: userEmoji) { newValue in
                             if newValue.count > 1 { userEmoji = String(newValue.first ?? "🍎") }
                             createLogo()

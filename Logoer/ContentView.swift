@@ -108,7 +108,22 @@ struct ContentView: View {
         } else if logoStyle == "emoji" {
             Text(userEmoji)
                 .font(.system(size: 15.5, weight: .black))
-                .offset(y: 0.2)
+                .needOffsetY()
+        } else if logoStyle == "appicon" {
+            ZStack {
+                Image("appicon_back")
+                    .interpolation(.high)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 17, height: 17)
+                Image(nsImage: appIcon)
+                    .interpolation(.high)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+            }
+            .offset(x:-1.5, y:1.5)
+            //.needOffsetY()
         } else if logoStyle == "custom" {
             if userImage != URL(fileURLWithPath: "/") {
                 if userImage.pathExtension == "gif" {
@@ -116,7 +131,7 @@ struct ContentView: View {
                         .interpolation(.high)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 16, height: 17)
+                        .frame(width: 17, height: 17)
                         .needOffset()
                 } else {
                     if let i = NSImage(contentsOf: userImage) {
@@ -124,7 +139,7 @@ struct ContentView: View {
                             .interpolation(.high)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 16, height: 17)
+                            .frame(width: 17, height: 17)
                             .needOffset()
                     }
                 }
@@ -146,6 +161,14 @@ extension View {
             return self
         } else {
             return self.offset(x: -0.5, y: -0.5)
+        }
+    }
+    
+    func needOffsetY() -> some View {
+        if #available(macOS 14, *) {
+            return self
+        } else {
+            return self.offset(y: -0.5)
         }
     }
 }
