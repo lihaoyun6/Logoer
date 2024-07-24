@@ -3,6 +3,28 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.8</title>
+            <pubDate>Thu, 25 Jul 2024 03:04:56 +0800</pubDate>
+            <sparkle:version>018</sparkle:version>
+            <sparkle:shortVersionString>0.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>添加了"当前 App 图标"模式, 可自动使用前台 App 图标替换默认 logo</li>
+                  <li>修复了自定义图像无法完全覆盖默认 logo 的问题</li>
+                  </ul><ul>
+                  <li>Added "Current App Icon" mode, which display the whole foreground app icon</li>
+                  <li>Fixed: Custom images cannot cover the whole default logo</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Logoer_v0.1.8.dmg" length="1913084" type="application/octet-stream" sparkle:edSignature="IR0MP5dtXnwpc4CVZJ1ZnvbsHhBDRawEn94UT4wIVvzrPsPWJHr0r/Otj5aW0ADTEAaYK6VBHmI3mL/6FsTWAQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Update018-017.delta" sparkle:deltaFrom="017" length="196070" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Egrg5RhYOekLGcHJCoFWKF1SZ+1VaSnKuensLuXHOHbCMKw6+NZKC6GAvvMvDV9R9p3dePcsD/0KAlOhSR0IDw=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Update018-016.delta" sparkle:deltaFrom="016" length="622414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="LJOf9SwAE5pxa6sDzrob6ktSgqzfx942tbIzrDJWZAsVQ2obVR+uoM6EO6YKwXfHp0o1cSlBBZ3i2dYcCaApAw=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Update018-015.delta" sparkle:deltaFrom="015" length="623554" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="8H3gGjNZSsV8GAmJFFbnF0InYBOXDPqbxfrdxqOm6xO1+KzmxobIHwqV3Ipr2csUKFbXb1ym+Vc01n1jC7pnBA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.7</title>
             <pubDate>Tue, 23 Jul 2024 22:39:59 +0800</pubDate>
             <sparkle:version>017</sparkle:version>
