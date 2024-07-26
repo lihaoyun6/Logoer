@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct ContentView: View {
     @AppStorage("userColor") var userColor: Color = .green
     @AppStorage("userEmoji") var userEmoji = "🍎"
+    @AppStorage("iconStroke") var iconStroke = "no"
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @AppStorage("userImage") var userImage: URL = URL(fileURLWithPath: "/")
     @State private var ibattery = InternalBattery.status
@@ -111,11 +112,13 @@ struct ContentView: View {
                 .needOffsetY()
         } else if logoStyle == "appicon" {
             ZStack {
-                Image("appicon_back")
-                    .interpolation(.high)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 17, height: 17)
+                if iconStroke != "no" {
+                    Image("appicon_back")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 17, height: 17)
+                        .foregroundColor(iconStroke == "white" ? .white : .black)
+                }
                 Image(nsImage: appIcon)
                     .interpolation(.high)
                     .resizable()
