@@ -3,6 +3,26 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.1.9</title>
+            <pubDate>Sat, 27 Jul 2024 00:32:42 +0800</pubDate>
+            <sparkle:version>019</sparkle:version>
+            <sparkle:shortVersionString>0.1.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了部分 App 图标尺寸异常的问题, 添加了图标衬边设置</li>
+                  </ul><ul>
+                  <li>Fixed: Some app icons are not the correct size</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Logoer_v0.1.9.dmg" length="1922599" type="application/octet-stream" sparkle:edSignature="oOLLFvOm10YYtYhmTb8jG7p1euJP4JCqwvfCruvN5EUrp4+x78j+wEDxM8XKePJiwvp+lnd69iHbcATg5CcPDg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Update019-018.delta" sparkle:deltaFrom="018" length="168898" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="DtMcYa+O5rvvFCz1LgIc8+CvfNRko4sg9Z1QYtSlu75EBWYLVsdkT5F2+4U/VYrmS3Wmd4UgFAqoAArSCEiPDQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Update019-017.delta" sparkle:deltaFrom="017" length="207062" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="3evZhcWDjg0aYYTvDDj1yjiP/TNEo2r83eFS5NjyZEpHSCU4HG0f8PimJnpSdes2FdyzYsh/dyIv4XVHFDqsBw=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Update019-016.delta" sparkle:deltaFrom="016" length="631602" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="VKh7NbR/0ZYXE+79O2cF3CzHhc4Xkrf/ebZkUie+3reeTRdNSFuyU7d90ID5rcUAMQOXBkon75STWmxhJni/Cg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.8</title>
             <pubDate>Thu, 25 Jul 2024 03:04:56 +0800</pubDate>
             <sparkle:version>018</sparkle:version>
