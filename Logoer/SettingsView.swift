@@ -12,6 +12,7 @@ import ServiceManagement
 struct SettingsView: View {
     @AppStorage("pinOnScreen") var pinOnScreen = false
     @AppStorage("launchAtLogin") var launchAtLogin = false
+    @AppStorage("iconStroke") var iconStroke = "no"
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @AppStorage("userColor") var userColor: Color = .green
     @AppStorage("userEmoji") var userEmoji = "🍎"
@@ -33,12 +34,12 @@ struct SettingsView: View {
             }
             Divider()
             HStack {
-                Picker("Logo Style", selection: $logoStyle) {
+                Picker("Logo Style:", selection: $logoStyle) {
                     Text("Rainbow Apple").tag("rainbow")
                     Text("Chrome Apple").tag("chrome")
                     Text("Glass Apple").tag("glass")
                     Text("Aqua Apple").tag("aqua")
-                    Text("*Frontmost App").tag("appicon")
+                    Text("*Frontmost App Icon").tag("appicon")
                     Text("*Battery Indicator").tag("battery")
                     Text("*Custom Color").tag("color")
                     Text("*Custom Emoji").tag("emoji")
@@ -47,6 +48,12 @@ struct SettingsView: View {
                 .onChange(of: logoStyle) { _ in createLogo() }
                 if logoStyle == "color" {
                     ColorPicker("", selection: $userColor)
+                } else if logoStyle == "appicon" {
+                    Picker("Stroke:", selection: $iconStroke) {
+                        Text("Hidden").tag("no")
+                        Text("White").tag("white")
+                        Text("Black").tag("black")
+                    }.fixedSize()
                 } else if logoStyle == "emoji" {
                     //Spacer().frame(width: 15)
                     Button("Random") { if let emoji = emojis.shuffled().first { userEmoji = emoji } }
