@@ -12,7 +12,7 @@
                   <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
                   <li>修复了部分 App 图标尺寸异常的问题, 添加了图标衬边设置</li>
                   </ul><ul>
-                  <li>Fixed: Some app icons are not the correct size</li>
+                  <li>Fixed: Some app icons are not the correct size.</li>
                   </ul><br><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
             ]]></description>
             <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Logoer_v0.1.9.dmg" length="1922599" type="application/octet-stream" sparkle:edSignature="oOLLFvOm10YYtYhmTb8jG7p1euJP4JCqwvfCruvN5EUrp4+x78j+wEDxM8XKePJiwvp+lnd69iHbcATg5CcPDg=="/>
