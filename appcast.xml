@@ -3,6 +3,28 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.2.0</title>
+            <pubDate>Sun, 04 Aug 2024 14:15:54 +0800</pubDate>
+            <sparkle:version>020</sparkle:version>
+            <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>添加了 "自动遮蔽" 功能, 可以遮盖住系统默认 Logo</li>
+                  <li>支持为自定义 Logo 启用阴影效果</li>
+                  </ul><ul>
+                  <li>Added "Auto-Mask" feature to cover the system default logo</li>
+                  <li>Allow adding shadows to custom logos</li>
+                  </ul><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Logoer_v0.2.0.dmg" length="2006457" type="application/octet-stream" sparkle:edSignature="9tpX8fLebAzkfrDqRTbhag9H7NNy38hOHJpz8QWfymCXGB5lLh303MjYwr746PuBbKirp0PTC/FHZZh5NgNdDg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Update020-019.delta" sparkle:deltaFrom="019" length="302646" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="0PyO+SgVh6r3co/WaDJmVGR5J1+dr1x/LL5BvkD1Rf+xJHc4bTuW746CkmJohTfFoaxhEwMRAcXSg2s8MVHTDg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Update020-018.delta" sparkle:deltaFrom="018" length="304650" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="sEZB1vDnHfT8Iawg+B3k+sJpC/2wOiY1hqJQFbqXO+WfAMCCbmK1mDB9877ii0yvkbuhY2XmAzEkiOCFIx6KCg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Update020-017.delta" sparkle:deltaFrom="017" length="325774" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="tHHns52vUIFGzqfma15BCp4CWeodllVch7v2roOlh7slDB6nrR9Ekwz/wXpYfvbPWyRdVm9EtG9Ytbw8Yu72Ag=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.1.9</title>
             <pubDate>Sat, 27 Jul 2024 00:32:42 +0800</pubDate>
             <sparkle:version>019</sparkle:version>
