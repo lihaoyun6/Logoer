@@ -7,7 +7,7 @@
 */
 
 "Launch at Login" = "登录时启动";
-"Visible in Full Screen Mode" = "在全屏模式下保持可见";
+"Always on Screen" = "强制驻留显示";
 "Logo Style:" = "图标风格:";
 "Rainbow Apple" = "经典彩虹";
 "Chrome Apple" = "镀铬金属";
@@ -23,8 +23,13 @@
 "Hidden" = "隐藏";
 "White" = "白色";
 "Black" = "黑色";
+"Background:" = "背景颜色";
 "Random" = "随机选取";
 "Import…" = "导入图片…";
+"Auto-Mask" = "自动遮蔽";
+"Shadow" = "图标阴影";
+"Refresh the mask every" = "遮蔽罩刷新间隔:";
+"s" = "秒";
 "Quit Logoer" = "退出 Logoer";
 "Check for Updates…" = "检查程序更新…";
 "Update:" = "程序更新:";
@@ -33,5 +38,6 @@
 "OK" = "好";
 "Logoer Tips" = "使用小贴士";
 "Don't remind me again" = "不再提醒";
+"Automatically capture the color of the menu bar and cover the system default Logo." = "自动捕获菜单栏的颜色并遮盖住系统默认的 Apple Logo";
 "When Logoer is running, you can run it again to bring up the settings panel." = "当 Logger 正在运行的时候\n再次从访达中运行它就可以唤起设置面板";
 "Enabling \"Visible in Full Screen Mode\" will keep the logo visible in full screen mode." = "在设置中启用 \"在全屏模式下保持可见\"\n将会使自定义 logo 在全屏模式下不被隐藏";
