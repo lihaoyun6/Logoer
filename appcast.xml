@@ -3,6 +3,28 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.2.1</title>
+            <pubDate>Mon, 05 Aug 2024 21:33:46 +0800</pubDate>
+            <sparkle:version>021</sparkle:version>
+            <sparkle:shortVersionString>0.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了 "自动遮蔽" 功能中的一些细节</li>
+                  <li>支持在全屏模式下自动隐藏自定义 Logo<br><b>(需要关闭 "始终显示在屏幕上" 选项. 请放心, 即使关闭此选项, Logoer 依旧可以正常显示在多个虚拟桌面上)</b></li>
+                  </ul><ul>
+                  <li>Fixed some details in "Auto-Mask" mode</li>
+                  <li>Your logo will be hidden when other apps enter full screen<br><b>(You need to turn off "Always on Screen". Don't worry, Logoer will still work on multiple virtual desktops even if you turn this off)</b></li>
+                  </ul><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Logoer_v0.2.1.dmg" length="2021951" type="application/octet-stream" sparkle:edSignature="5vp9ouh/juYgaWWx9bN21y7cRKPCpK8VeBjgSpkZfMk+Tbgj2F+b81NtfX3WO4JbNL2kbJcyc2msnE2KoTkZBg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Update021-020.delta" sparkle:deltaFrom="020" length="225982" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="ri01eKJZsL5K8qg4LVaEBmRP1Z25XxeNfCshBhIkbxRg5MpC3fk9R70W4gmYhF2kGNLQZobp6UyAIkaUFCdoBg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Update021-019.delta" sparkle:deltaFrom="019" length="337122" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="VDDGVcHHMX2hUzOe+m+9SjeYus/14s32q4wswNe1+AEVxKvQTtRvPg8D9TkrwE5ZGqzXAAOGyooyDM6HH8nCBQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Update021-018.delta" sparkle:deltaFrom="018" length="340738" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="QrktuX0SlovhGUyO1uTHN3fk6NlE7sNRlx/JacVWWaaZiqnFnyL42NeY4FTziz4p5Asn3Zsj0HYgwofw9bJ6BA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.2.0</title>
             <pubDate>Sun, 04 Aug 2024 14:15:54 +0800</pubDate>
             <sparkle:version>020</sparkle:version>
