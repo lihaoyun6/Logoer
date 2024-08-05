@@ -9,8 +9,6 @@ import Foundation
 import IOKit.ps
 import SwiftUI
 
-let batteryTimer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
-
 struct iBattery {
     var hasBattery: Bool
     var isCharging: Bool
@@ -18,6 +16,7 @@ struct iBattery {
     var acPowered: Bool
     var timeLeft: String
     var batteryLevel: Int
+    var levelColor: String
 }
 
 func getPowerColor(_ level: Int) -> String {
@@ -31,19 +30,18 @@ func getPowerColor(_ level: Int) -> String {
 }
 
 func getPowerState() -> iBattery {
-    if !deviceType.lowercased().contains("book") { return iBattery(hasBattery: false, isCharging: false, isCharged: false, acPowered: false, timeLeft: "", batteryLevel: 0) }
-    let internalFinder = InternalFinder()
-    if let internalBattery = internalFinder.getInternalBattery() {
-        if let level = internalBattery.charge {
-            return iBattery(hasBattery: true, isCharging: internalBattery.isCharging ?? false, isCharged :internalBattery.isCharged ?? false, acPowered: internalBattery.acPowered ?? false, timeLeft: internalBattery.timeLeft, batteryLevel: Int(level))
+    if deviceType.lowercased().contains("book") {
+        let internalFinder = InternalFinder()
+        if let internalBattery = internalFinder.getInternalBattery() {
+            if let level = internalBattery.charge {
+                return iBattery(hasBattery: true, isCharging: internalBattery.isCharging ?? false, isCharged :internalBattery.isCharged ?? false, acPowered: internalBattery.acPowered ?? false, timeLeft: internalBattery.timeLeft, batteryLevel: Int(level), levelColor: getPowerColor(Int(level)))
+            }
         }
     }
-    return iBattery(hasBattery: false, isCharging: false, isCharged: false, acPowered: false, timeLeft: "", batteryLevel: 0)
+    return iBattery(hasBattery: false, isCharging: false, isCharged: false, acPowered: false, timeLeft: "", batteryLevel: 0, levelColor: "my_gray")
 }
 
 class InternalBattery {
-    static var status: iBattery = getPowerState()
-    
     var name: String?
     var timeToFull: Int?
     var timeToEmpty: Int?

@@ -104,7 +104,7 @@ struct SettingsView: View {
                 HStack(spacing: 2) {
                     Toggle("Auto-Mask", isOn: $maskMode)
                         .toggleStyle(.checkbox)
-                        .onChange(of: maskMode) { newValue in createLogo() }
+                        .onChange(of: maskMode) { newValue in if newValue { refeshMask() }}
                     SWInfoButton(showOnHover: false, fillMode: true, animatePopover: true, content: "Automatically capture the color of the menu bar and cover the system default Logo.".local, primaryColor: NSColor.controlAccentColor)
                         .frame(width: 19, height: 19)
                 }
