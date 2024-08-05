@@ -14,7 +14,7 @@
                   <li>支持在全屏模式下自动隐藏自定义 Logo</li>
                   </ul><ul>
                   <li>Fixed some details in "Auto-Mask" mode</li>
-                  <li>Your logo will be hidden when other apps enter full screen</li>
+                  <li>Your custom logo will be hidden when other apps enter full screen</li>
                   </ul><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
             ]]></description>
             <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Logoer_v0.2.1.dmg" length="2021951" type="application/octet-stream" sparkle:edSignature="5vp9ouh/juYgaWWx9bN21y7cRKPCpK8VeBjgSpkZfMk+Tbgj2F+b81NtfX3WO4JbNL2kbJcyc2msnE2KoTkZBg=="/>
