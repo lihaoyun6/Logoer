@@ -3,6 +3,26 @@
     <channel>
         <title>Logoer</title>
         <item>
+            <title>v0.2.2</title>
+            <pubDate>Fri, 09 Aug 2024 15:25:55 +0800</pubDate>
+            <sparkle:version>022</sparkle:version>
+            <sparkle:shortVersionString>0.2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了遮罩刷新间隔设置为 0 时程序卡死的问题</li>
+                  </ul><ul>
+                  <li>Prevent users from setting the mask refresh interval to 0</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Logoer_v0.2.2.dmg" length="2025973" type="application/octet-stream" sparkle:edSignature="lfRh6bV2YvsrBoziq/Mw2OT7VgqKsMpu4vtCb6U5vT7gd5SMmEO5ts6nFfGB8+mdolzhnqDnpT67gTRXmbr6CA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Update022-021.delta" sparkle:deltaFrom="021" length="188390" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="zcMx8FIEMT5xj/M0oNa8rhEXNUCoDPAz2gm+DF/KZ+r2TGspzahXAoNiREsq+hJ8xtzEDIJhgv9O8YIbHt4uCA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Update022-020.delta" sparkle:deltaFrom="020" length="246082" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Is0noeedLPlOJau93b/Xsfq2iQuhxMhfDv/tvaVEf+wBY5sbmIZMK4dB7pax/e8UptXPGn3cxNCJup8GjUWuCA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Update022-019.delta" sparkle:deltaFrom="019" length="334254" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="+q9ihYi9+eY8GRm9Aer+gZUZoTF3u1Ad1dumQ/uAzandYHOEmdDINcdLr2hijmnebIE5ynkBghM75+DYeYFOAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>v0.2.1</title>
             <pubDate>Mon, 05 Aug 2024 21:33:46 +0800</pubDate>
             <sparkle:version>021</sparkle:version>
