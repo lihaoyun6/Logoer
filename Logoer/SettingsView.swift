@@ -112,6 +112,7 @@ struct SettingsView: View {
                     Text("Refresh the mask every")
                         .foregroundColor(maskMode ? .primary : .secondary.opacity(0.5))
                     TextField("", value: $maskInterval, formatter: NumberFormatter())
+                        .onChange(of: maskInterval) { newValue in if newValue < 1 { maskInterval = 1 }}
                         .disabled(!maskMode)
                         .frame(width: 25)
                     Text("s")

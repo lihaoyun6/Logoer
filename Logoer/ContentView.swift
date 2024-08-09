@@ -16,6 +16,7 @@ struct maskImage {
 class DataModel: ObservableObject {
     @Published var fullScreens = [NSRect]()
     @Published var masks = [maskImage]()
+    @Published var appIcon = getIcon(app: NSWorkspace.shared.frontmostApplication)
     @Published var battery = getPowerState()
 }
 
@@ -174,12 +175,13 @@ struct ContentView: View {
                     } else {
                         Text(userEmoji)
                             .font(.system(size: 15.5))
+                            .offset(x: 0.5)
                             .needOffset(x: 0, y: -0.5)
                             .shadow(color: Color.black.opacity(shadowON ? 0.2 : 0.0), radius: 1.5, y: 1.5)
                     }
                 } else if logoStyle == "appicon" {
                     let color: Color = (iconStroke != "no") ? (iconStroke == "white" ? .white : .black) : .clear
-                    Image(nsImage: appIcon)
+                    Image(nsImage: dataModel.appIcon)
                         .interpolation(.high)
                         .resizable()
                         .scaledToFit()

@@ -16,9 +16,9 @@ var maskLock = false
 var aboveSonoma = false
 var aboveSequoia = false
 var dataModel = DataModel()
-var appIcon = getIcon(app: NSWorkspace.shared.frontmostApplication)
 var updaterController: SPUStandardUpdaterController!
 var maskTimer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+
 @main
 struct LogoerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -37,17 +37,15 @@ struct LogoerApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     @AppStorage("logoStyle") var logoStyle = "rainbow"
     @AppStorage("maskInterval") var maskInterval = 5
-    @AppStorage("maskMode") var maskMode: Bool = false
     let th = DispatchQueue.global(qos: .background)
+    let NC = NSWorkspace.shared.notificationCenter
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         th.async {
             while true {
                 Thread.sleep(forTimeInterval: TimeInterval(self.maskInterval))
-                if self.maskMode {
-                    DispatchQueue.main.async {
-                        if !maskLock { refeshMask() } else { maskLock = false }
-                    }
+                DispatchQueue.main.async {
+                    if !maskLock { refeshMask() } else { maskLock = false }
                 }
             }
         }
@@ -66,10 +64,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         deviceType = getMacDeviceType()
         if #available(macOS 14, *) { aboveSonoma = true }
         if #available(macOS 15, *) { aboveSequoia = true }
-        if maskMode { refeshMask() }
+        refeshMask()
         createLogo()
         CGDisplayRegisterReconfigurationCallback(displayReconfigurationCallback, nil)
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(didActivateApplication(_:)), name: NSWorkspace.didActivateApplicationNotification, object: nil)
+        NC.addObserver(self, selector: #selector(onDisplayWake), name: NSWorkspace.screensDidWakeNotification, object: nil)
+        NC.addObserver(self, selector: #selector(didActivateApplication(_:)), name: NSWorkspace.didActivateApplicationNotification, object: nil)
         tips(id: "logoer.first-start.note", text: "When Logoer is running, you can run it again to bring up the settings panel.")
         tips(id: "logoer.full-screen.note", text: "Enabling \"Visible in Full Screen Mode\" will keep the logo visible in full screen mode.")
     }
@@ -95,11 +94,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
+    @objc func onDisplayWake() { print("Display WakeUp"); createLogo() }
+    
     @objc func didActivateApplication(_ notification: Notification) {
         if logoStyle == "appicon",
            let userInfo = notification.userInfo,
            let app = userInfo[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication {
-            appIcon = getIcon(app: app)
+            dataModel.appIcon = getIcon(app: app)
             createLogo()
         }
     }
@@ -120,31 +121,28 @@ func getIcon(app: NSRunningApplication?) -> NSImage {
 }
 
 func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplayChangeSummaryFlags, userInfo: UnsafeMutableRawPointer?) {
+    print("Display Re-Configuration: \(flags)")
     createLogo()
 }
 
 func refeshMask() {
     @AppStorage("maskMode") var maskMode: Bool = false
+    if !maskMode { return }
     var masks = [maskImage]()
     let screens = NSScreen.screens
     for index in screens.indices {
         let screen = screens[index]
         let origin = getOrigin(of: screen, in: screens)
         let maskURL = getMaskURL(index: index)
-        if maskMode {
-            _ = process(path: "/usr/sbin/screencapture", arguments: ["-x", "-R", "\(origin.x),\(origin.y),4,4", maskURL.path])
-            if let image = NSImage(contentsOf: maskURL) {
-                masks.append(maskImage(url: maskURL, image: image))
-            }
-        }
+        _ = process(path: "/usr/sbin/screencapture", arguments: ["-x", "-R", "\(origin.x),\(origin.y),4,4", maskURL.path])
+        if let image = NSImage(contentsOf: maskURL) { masks.append(maskImage(url: maskURL, image: image)) }
     }
     dataModel.masks = masks
 }
 
-func createLogo(noCache: Bool = false, reMask: Bool = false) {
-    @AppStorage("maskMode") var maskMode: Bool = false
+func createLogo(noCache: Bool = false) {
     @AppStorage("logoStyle") var logoStyle = "rainbow"
-    
+    print("refesh logo at: \(Date())")
     for w in NSApp.windows.filter({ $0.title == "logo" }) { w.close() }
     
     if noCache {
@@ -156,12 +154,6 @@ func createLogo(noCache: Bool = false, reMask: Bool = false) {
     for index in screens.indices {
         let screen = screens[index]
         let maskURL = getMaskURL(index: index)
-        let origin = getOrigin(of: screen, in: screens)
-        // 暂未使用的特性
-        if maskMode && reMask {
-            maskLock = true
-            _ = process(path: "/usr/sbin/screencapture", arguments: ["-x", "-R", "\(origin.x),\(origin.y),4,4", maskURL.path])
-        }
         let appleMenuBarHeight = screen.frame.height - screen.visibleFrame.height - (screen.visibleFrame.origin.y - screen.frame.origin.y) - 1
         let logo = NSWindow(contentRect: NSRect(x:0, y: 0, width: 24, height: 24), styleMask: [.fullSizeContentView], backing: .buffered, defer: false)
         logo.contentView = NSHostingView(rootView: ContentView(model: dataModel, screen: screen, maskURL: maskURL))
