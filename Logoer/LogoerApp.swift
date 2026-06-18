@@ -172,20 +172,50 @@ func createLogo(noCache: Bool = false) {
     }
 }
 
+// Private CoreGraphics "Spaces" API. We ask the window server which displays are
+// currently showing a native full-screen Space. This is the only reliable signal:
+// on notched Macs a full-screen window's bounds are identical to a merely *maximized*
+// window's (both render below the notch), so comparing window rectangles can never
+// tell full screen from maximized. Asking about the Space type sidesteps that entirely,
+// works for any app, and is per-display.
+typealias CGSConnectionID = UInt32
+@_silgen_name("_CGSDefaultConnection")
+func _CGSDefaultConnection() -> CGSConnectionID
+@_silgen_name("CGSCopyManagedDisplaySpaces")
+func CGSCopyManagedDisplaySpaces(_ cid: CGSConnectionID) -> Unmanaged<CFArray>
+
+// CGS reports a native full-screen Space with type == 4.
+private let kCGSSpaceTypeFullscreen = 4
+
+// Stable UUID string for a screen, used to match an NSScreen to a CGS managed display.
+func screenUUID(_ screen: NSScreen) -> String? {
+    guard let num = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber,
+          let cf = CGDisplayCreateUUIDFromDisplayID(CGDirectDisplayID(num.uint32Value))?.takeRetainedValue()
+    else { return nil }
+    return CFUUIDCreateString(nil, cf) as String
+}
+
 func getFullScreens() {
-    var screenList = [NSRect]()
-    if let windows = CGWindowListCopyWindowInfo([.excludeDesktopElements, .optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] {
-        for window in windows {
-            if getOwner(window) == "SystemUIServer" { continue }
-            if let level = window[kCGWindowLayer as String] as? Int { if level != 0 { continue } }
-            if let bounds = window[kCGWindowBounds as String] as? [String: CGFloat] {
-                let windowRect = CGRect(x: bounds["X"] ?? 0, y: bounds["Y"] ?? 0, width: bounds["Width"] ?? 0, height: bounds["Height"] ?? 0)
-                for screen in NSScreen.screens {
-                    if windowRect.equalTo(screen.frame) { screenList.append(screen.frame) }
-                }
-            }
+    // Which displays currently show a native full-screen Space?
+    var fullScreenDisplayIDs = Set<String>()
+    if let displays = CGSCopyManagedDisplaySpaces(_CGSDefaultConnection()).takeRetainedValue() as? [[String: Any]] {
+        for display in displays {
+            guard let id = display["Display Identifier"] as? String,
+                  let current = display["Current Space"] as? [String: Any],
+                  let type = current["type"] as? Int else { continue }
+            if type == kCGSSpaceTypeFullscreen { fullScreenDisplayIDs.insert(id) }
         }
     }
+
+    // Map those displays back to NSScreen frames (the unit ContentView compares against).
+    // "Main" is accepted as a fallback identifier for the primary display on some macOS versions.
+    var screenList = [NSRect]()
+    for screen in NSScreen.screens {
+        let matchesUUID = screenUUID(screen).map { fullScreenDisplayIDs.contains($0) } ?? false
+        let matchesMain = fullScreenDisplayIDs.contains("Main") && screen.isMainScreen
+        if matchesUUID || matchesMain { screenList.append(screen.frame) }
+    }
+
     if screenList != dataModel.fullScreens {
         if screenList.count < dataModel.fullScreens.count {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -195,19 +225,6 @@ func getFullScreens() {
         }
         dataModel.fullScreens = screenList
     }
-}
-
-func getOwner(_ w: [String: Any]) -> String {
-    let name = w["kCGWindowOwnerName"] as? String ?? ""
-    if name.contains("pid=") {
-        guard let pid = w["kCGWindowOwnerPID"] as? Int else { return "" }
-        for app in NSWorkspace.shared.runningApplications {
-            if let name = app.localizedName, app.processIdentifier == pid {
-                return name
-            }
-        }
-    }
-    return name
 }
 
 func getOrigin(of screen: NSScreen, in screens: [NSScreen]) -> NSPoint {
