@@ -1,0 +1,203 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Logoer</title>
+        <item>
+            <title>v0.2.2</title>
+            <pubDate>Fri, 09 Aug 2024 15:25:55 +0800</pubDate>
+            <sparkle:version>022</sparkle:version>
+            <sparkle:shortVersionString>0.2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了遮罩刷新间隔设置为 0 时程序卡死的问题</li>
+                  </ul><ul>
+                  <li>Prevent users from setting the mask refresh interval to 0</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Logoer_v0.2.2.dmg" length="2025973" type="application/octet-stream" sparkle:edSignature="lfRh6bV2YvsrBoziq/Mw2OT7VgqKsMpu4vtCb6U5vT7gd5SMmEO5ts6nFfGB8+mdolzhnqDnpT67gTRXmbr6CA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Update022-021.delta" sparkle:deltaFrom="021" length="188390" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="zcMx8FIEMT5xj/M0oNa8rhEXNUCoDPAz2gm+DF/KZ+r2TGspzahXAoNiREsq+hJ8xtzEDIJhgv9O8YIbHt4uCA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Update022-020.delta" sparkle:deltaFrom="020" length="246082" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Is0noeedLPlOJau93b/Xsfq2iQuhxMhfDv/tvaVEf+wBY5sbmIZMK4dB7pax/e8UptXPGn3cxNCJup8GjUWuCA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.2/Update022-019.delta" sparkle:deltaFrom="019" length="334254" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="+q9ihYi9+eY8GRm9Aer+gZUZoTF3u1Ad1dumQ/uAzandYHOEmdDINcdLr2hijmnebIE5ynkBghM75+DYeYFOAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.2.1</title>
+            <pubDate>Mon, 05 Aug 2024 21:33:46 +0800</pubDate>
+            <sparkle:version>021</sparkle:version>
+            <sparkle:shortVersionString>0.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了 "自动遮蔽" 功能中的一些细节</li>
+                  <li>支持在全屏模式下自动隐藏自定义 Logo<br><b>(需要关闭 "始终显示在屏幕上" 选项. 请放心, 即使关闭此选项, Logoer 依旧可以正常显示在多个虚拟桌面上)</b></li>
+                  </ul><ul>
+                  <li>Fixed some details in "Auto-Mask" mode</li>
+                  <li>Your logo will be hidden when other apps enter full screen<br><b>(You need to turn off "Always on Screen". Don't worry, Logoer will still work on multiple virtual desktops even if you turn this off)</b></li>
+                  </ul><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Logoer_v0.2.1.dmg" length="2021951" type="application/octet-stream" sparkle:edSignature="5vp9ouh/juYgaWWx9bN21y7cRKPCpK8VeBjgSpkZfMk+Tbgj2F+b81NtfX3WO4JbNL2kbJcyc2msnE2KoTkZBg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Update021-020.delta" sparkle:deltaFrom="020" length="225982" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="ri01eKJZsL5K8qg4LVaEBmRP1Z25XxeNfCshBhIkbxRg5MpC3fk9R70W4gmYhF2kGNLQZobp6UyAIkaUFCdoBg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Update021-019.delta" sparkle:deltaFrom="019" length="337122" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="VDDGVcHHMX2hUzOe+m+9SjeYus/14s32q4wswNe1+AEVxKvQTtRvPg8D9TkrwE5ZGqzXAAOGyooyDM6HH8nCBQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.1/Update021-018.delta" sparkle:deltaFrom="018" length="340738" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="QrktuX0SlovhGUyO1uTHN3fk6NlE7sNRlx/JacVWWaaZiqnFnyL42NeY4FTziz4p5Asn3Zsj0HYgwofw9bJ6BA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.2.0</title>
+            <pubDate>Sun, 04 Aug 2024 14:15:54 +0800</pubDate>
+            <sparkle:version>020</sparkle:version>
+            <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>添加了 "自动遮蔽" 功能, 可以遮盖住系统默认 Logo</li>
+                  <li>支持为自定义 Logo 启用阴影效果</li>
+                  </ul><ul>
+                  <li>Added "Auto-Mask" feature to cover the system default logo</li>
+                  <li>Allow adding shadows to custom logos</li>
+                  </ul><img src="https://github.com/lihaoyun6/Logoer/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Logoer_v0.2.0.dmg" length="2006457" type="application/octet-stream" sparkle:edSignature="9tpX8fLebAzkfrDqRTbhag9H7NNy38hOHJpz8QWfymCXGB5lLh303MjYwr746PuBbKirp0PTC/FHZZh5NgNdDg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Update020-019.delta" sparkle:deltaFrom="019" length="302646" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="0PyO+SgVh6r3co/WaDJmVGR5J1+dr1x/LL5BvkD1Rf+xJHc4bTuW746CkmJohTfFoaxhEwMRAcXSg2s8MVHTDg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Update020-018.delta" sparkle:deltaFrom="018" length="304650" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="sEZB1vDnHfT8Iawg+B3k+sJpC/2wOiY1hqJQFbqXO+WfAMCCbmK1mDB9877ii0yvkbuhY2XmAzEkiOCFIx6KCg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.2.0/Update020-017.delta" sparkle:deltaFrom="017" length="325774" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="tHHns52vUIFGzqfma15BCp4CWeodllVch7v2roOlh7slDB6nrR9Ekwz/wXpYfvbPWyRdVm9EtG9Ytbw8Yu72Ag=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.9</title>
+            <pubDate>Sat, 27 Jul 2024 00:32:42 +0800</pubDate>
+            <sparkle:version>019</sparkle:version>
+            <sparkle:shortVersionString>0.1.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了部分 App 图标尺寸异常的问题, 添加了图标衬边设置</li>
+                  </ul><ul>
+                  <li>Fixed: Some app icons are not the correct size.</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Logoer_v0.1.9.dmg" length="1922599" type="application/octet-stream" sparkle:edSignature="oOLLFvOm10YYtYhmTb8jG7p1euJP4JCqwvfCruvN5EUrp4+x78j+wEDxM8XKePJiwvp+lnd69iHbcATg5CcPDg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Update019-018.delta" sparkle:deltaFrom="018" length="168898" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="DtMcYa+O5rvvFCz1LgIc8+CvfNRko4sg9Z1QYtSlu75EBWYLVsdkT5F2+4U/VYrmS3Wmd4UgFAqoAArSCEiPDQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Update019-017.delta" sparkle:deltaFrom="017" length="207062" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="3evZhcWDjg0aYYTvDDj1yjiP/TNEo2r83eFS5NjyZEpHSCU4HG0f8PimJnpSdes2FdyzYsh/dyIv4XVHFDqsBw=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.9/Update019-016.delta" sparkle:deltaFrom="016" length="631602" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="VKh7NbR/0ZYXE+79O2cF3CzHhc4Xkrf/ebZkUie+3reeTRdNSFuyU7d90ID5rcUAMQOXBkon75STWmxhJni/Cg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.8</title>
+            <pubDate>Thu, 25 Jul 2024 03:04:56 +0800</pubDate>
+            <sparkle:version>018</sparkle:version>
+            <sparkle:shortVersionString>0.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>添加了"当前 App 图标"模式, 可自动使用前台 App 图标替换默认 logo</li>
+                  <li>修复了自定义图像无法完全覆盖默认 logo 的问题</li>
+                  </ul><ul>
+                  <li>Added "Current App Icon" mode, which display the foreground app icon</li>
+                  <li>Fixed: Custom images cannot cover the whole default logo</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Logoer_v0.1.8.dmg" length="1913084" type="application/octet-stream" sparkle:edSignature="IR0MP5dtXnwpc4CVZJ1ZnvbsHhBDRawEn94UT4wIVvzrPsPWJHr0r/Otj5aW0ADTEAaYK6VBHmI3mL/6FsTWAQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Update018-017.delta" sparkle:deltaFrom="017" length="196070" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Egrg5RhYOekLGcHJCoFWKF1SZ+1VaSnKuensLuXHOHbCMKw6+NZKC6GAvvMvDV9R9p3dePcsD/0KAlOhSR0IDw=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Update018-016.delta" sparkle:deltaFrom="016" length="622414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="LJOf9SwAE5pxa6sDzrob6ktSgqzfx942tbIzrDJWZAsVQ2obVR+uoM6EO6YKwXfHp0o1cSlBBZ3i2dYcCaApAw=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.8/Update018-015.delta" sparkle:deltaFrom="015" length="623554" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="8H3gGjNZSsV8GAmJFFbnF0InYBOXDPqbxfrdxqOm6xO1+KzmxobIHwqV3Ipr2csUKFbXb1ym+Vc01n1jC7pnBA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.7</title>
+            <pubDate>Tue, 23 Jul 2024 22:39:59 +0800</pubDate>
+            <sparkle:version>017</sparkle:version>
+            <sparkle:shortVersionString>0.1.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了在 macOS 15 上位置偏移的问题</li>
+                  <li>支持导入 Gif 图并动态播放</li>
+                  </ul><ul>
+                  <li>Fixed compatibility with macOS 15</li>
+                  <li>Added support for Gif animations</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Logoer_v0.1.7.dmg" length="1900217" type="application/octet-stream" sparkle:edSignature="pVkp70bKdDFlHIn9TsOSDqvmAbeLkpggBVQ4nvKIOFXA24dHjnk4bcb/eUMmwwBwFoWeTT3tic+Y+MR8X0s4AA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Update017-016.delta" sparkle:deltaFrom="016" length="592786" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="JKbeEnvC7DxqkXBALVUK/730qBgc80HDv3Y+9/O04+YxB/MqhHyfkWZYEVNONvy7uHo8hDHfMas6lpQQURPPAg=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Update017-015.delta" sparkle:deltaFrom="015" length="592782" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="f7wQKMRmpJkrZEVYNCCCCqv9rJ/EJsbcRyUyHgo9i8KRbweGcVfufNGjmyGwMYmhS/wSi0Tc6HVGQtsrT79+BQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.7/Update017-014.delta" sparkle:deltaFrom="014" length="621670" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="u/vayGTAP44WL0MtkR98i+0U6UvEvQ9CD21CimM1FIMLxlngO493N4RgMI4iIQehcSrT5TEfg6cR4fSk/2naAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.6</title>
+            <pubDate>Mon, 22 Jul 2024 11:34:58 +0800</pubDate>
+            <sparkle:version>016</sparkle:version>
+            <sparkle:shortVersionString>0.1.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了与 macOS 15 的兼容性</li>
+                  </ul><ul>
+                  <li>Fixed compatibility with macOS 15</li>
+                  </ul><br><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="300"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Logoer_v0.1.6.dmg" length="1216089" type="application/octet-stream" sparkle:edSignature="35CtiF0mw67vDgAQ1duS0TCt55JRZY+zaArj6uKV8AJLcxyRibcUSEG7IRUvKTaP00AF8W6rDoFHF01FS9rbCw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Update016-015.delta" sparkle:deltaFrom="015" length="11646" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="LK/oSZYWpqVDuOsudWv8LH061Xtaw7a+h4aUs/HBJ375ig0QXV40pOZFctCg4DE7V6NpCy24B2TwidXg75HgAQ=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Update016-014.delta" sparkle:deltaFrom="014" length="80258" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="BqAlD/nRP7ylJ5DHtuoF4VjEzVmH/A0fjYEDTJ/J3Rj9JdjR0SgNlW6ADWJU0ENJ5GiF3qPjKYOIbxZwCqe1CA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.6/Update016-013.delta" sparkle:deltaFrom="013" length="127862" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="29oYxNI5pYHwORfhljbDM634bkiAMlhgLcQ8u4mwik65u1FMZ5EiAWoloFpQVKhddyyWfijUUZNlnSKjASFVDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.5</title>
+            <pubDate>Sun, 21 Jul 2024 23:33:17 +0800</pubDate>
+            <sparkle:version>015</sparkle:version>
+            <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了在不含内置电池的 Mac 上闪退的问题</li>
+                  <li>添加了"自定义图像"模式, 允许用户导入任意图标</li>
+                  </ul><ul>
+                  <li>Fixed: Crash on Macs without internal battery</li>
+                  <li>Added "Custom Image" mode, allowing users to import icons</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="280"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.5/Logoer_v0.1.5.dmg" length="1215295" type="application/octet-stream" sparkle:edSignature="X1mB2BfqJxmwHFX6OyySSRrcvZRNDXDAW4ENkteSNn6UQZX1WFnZT4nHPgQmZbr0tPxy0uYQtlibGdwXlJF9Ag=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.5/Logoer015-014.delta" sparkle:deltaFrom="014" length="80098" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="9XySZOXriMyLzJHVBhuaNqA2Ugar2OhckEIMoj4nYoslnrjYyrgBZ5EPlLzLSWzt/Po3hd5xeDC/TevJXW8QDA=="/>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.5/Logoer015-013.delta" sparkle:deltaFrom="013" length="127414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Y4Jo6J0kmvJFTwSi/d0sQROuUpJqQNjmRcmrTX0TSZjmkNTumKKi4jD8tNG11hKXyAlWz3iUCjmIudAhaLI+AQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.4</title>
+            <pubDate>Sun, 21 Jul 2024 01:11:13 +0800</pubDate>
+            <sparkle:version>014</sparkle:version>
+            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                  <style>ul{margin-top: 0;margin-bottom: 7;padding-left: 18;}</style><ul>
+                  <li>修复了充电指示器状态显示错误的问题</li>
+                  <li>添加了全屏模式支持</li>
+                  </ul><ul>
+                  <li>Fixed incorrect charger icon</li>
+                  <li>Added fullscreen mode support</li>
+                  </ul><img src="https://github.com/lihaoyun6/AirBattery/raw/main/img/donate.png" width="280"/>
+            ]]></description>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.4/Logoer_v0.1.4.dmg" length="1180870" type="application/octet-stream" sparkle:edSignature="Dwvr7KC6uToQA/oO3DVxTMrI/KCwUfPr8Av1V88ON9snkPDoKNpwJL/soCzfi988u3534RKA8mFijsCJhr7ZDQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.4/Update014-013.delta" sparkle:deltaFrom="013" length="84282" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="QoAQd+3pptMGWa5BsgrvWqSN7hW4QWmAMCkrxWLm/9uYE/NXlEDzEqa3Vgi7dG1CrQCCFbaML8LVfOSuwUvDDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>v0.1.0</title>
+            <pubDate>Fri, 19 Jul 2024 03:08:17 +0800</pubDate>
+            <sparkle:version>010</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/lihaoyun6/Logoer/releases/download/0.1.0/Logoer_v0.1.0.dmg" length="1066173" type="application/octet-stream" sparkle:edSignature="A51K37ZycGgLWnJ3NOKdLedBO2yp3f6uoSisIkHYHF8fgc/pNity9V3E2QurjeeBgD6b/KrbhbSyGGHJUo13CA=="/>
+        </item>
+    </channel>
+</rss>
