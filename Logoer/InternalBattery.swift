@@ -104,7 +104,7 @@ class InternalBattery {
 }
 
 class InternalFinder {
-    private var serviceInternal: io_connect_t = 0 // io_object_t
+    private var serviceInternal: io_object_t = 0 // io_connect_t = 0 // io_object_t
     private var internalChecked: Bool = false
     private var hasInternalBattery: Bool = false
 
@@ -133,11 +133,12 @@ class InternalFinder {
     }
 
     fileprivate func close() {
-        IOServiceClose(self.serviceInternal)
-        IOObjectRelease(self.serviceInternal)
-
-        self.serviceInternal = 0
+        if self.serviceInternal != 0 {
+            IOObjectRelease(self.serviceInternal)
+            self.serviceInternal = 0
+        }
     }
+
 
     func getInternalBattery() -> InternalBattery? {
         self.open()
