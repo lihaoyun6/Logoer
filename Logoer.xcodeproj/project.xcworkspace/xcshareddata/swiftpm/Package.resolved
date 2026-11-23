@@ -1,13 +1,12 @@
 {
-  "originHash" : "450220ea340c4cbc703a6b981bb31e1b9d089e0bfc91991d4f9b685877698c50",
   "pins" : [
     {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
       "state" : {
-        "revision" : "be0bcd7823ce56629948491f2eaeaa19979514f7",
-        "version" : "5.19.4"
+        "revision" : "69e573c01d04f5f1af0d2373ebfe251cfa5aa313",
+        "version" : "5.18.9"
       }
     },
     {
@@ -15,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
       "state" : {
-        "revision" : "5d462f7530677ae0c2b9510c26383aa25ba48751",
-        "version" : "3.1.1"
+        "revision" : "61fefe9c284fd41ddef77d02749e88f00c305196",
+        "version" : "2.2.2"
       }
     },
     {
@@ -24,10 +23,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",
       "state" : {
-        "revision" : "0ef1ee0220239b3776f433314515fd849025673f",
-        "version" : "2.6.4"
+        "revision" : "87e4fcbac39912f9cdb9a9acf205cad60e1ca3bc",
+        "version" : "2.4.2"
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

@@ -232,11 +232,13 @@ struct ContentView: View {
 }
 
 extension View {
+    @ViewBuilder
     func needOffset(x: CGFloat, y: CGFloat) -> some View {
         if #available(macOS 14, *) {
-            return self
+            self
         } else {
-            return self.offset(x: x, y: y)
+            self.offset(x: x, y: y)
         }
     }
 }
+

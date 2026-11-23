@@ -117,7 +117,8 @@ func getIcon(app: NSRunningApplication?) -> NSImage {
             return NSWorkspace.shared.icon(forFile: path)
         }
     }
-    return NSImage.appiconBack
+// fix    return NSImage.appiconBack
+    return NSApp.applicationIconImage
 }
 
 func displayReconfigurationCallback(display: CGDirectDisplayID, flags: CGDisplayChangeSummaryFlags, userInfo: UnsafeMutableRawPointer?) {
@@ -310,7 +311,9 @@ extension NSScreen {
 
 extension NSMenuItem {
     func performAction() {
-        guard let menu else { return }
+// fix       guard let menu else { return }
+        guard let menu = menu else { return }
+
         menu.performActionForItem(at: menu.index(of: self))
     }
 }
